@@ -50,4 +50,4 @@ const Buy = ({ provider, price, crowdsale, setIsLoading }) => {
     );
 }
 
-export default Buy;
+export default Search;
