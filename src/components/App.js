@@ -36,7 +36,7 @@ function App() {
       <Navigation account={account} setAccount={setAccount} />
       <hr /> {/*  I may remove this horizontal rule */}
      
-      <h2 className='my-4 text-center'>Introducing a new way to mint NFTs for Real Estate on the blockchain...</h2>
+      <h2 className='my-4 text-center'>Introducing an exciting way to mint Real Estate NFTs on the blockchain</h2>
     </div>
   );
 }

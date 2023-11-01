@@ -15,7 +15,7 @@ const Navigation = ({ account, setAccount }) => {
 			<li><a href='#'>Rent</a></li>
 			<li><a href='#'>Sell</a></li>
 		</ul>
-		<div className='nav__brand'>
+		<div className='nav__brand pl-5'>
 			<img 
 				alt="Kalina" 
 				src={ logo } 
