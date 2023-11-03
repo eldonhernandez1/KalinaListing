@@ -11,7 +11,7 @@ const tokens = (n) => {
 }
 async function main() {
   // Setup accounts
-  [buyer, seller, inspector, lender] = await ethers.getSigners()
+   const [buyer, seller, inspector, lender] = await ethers.getSigners()
 
   // Deploy Real Estate
   const RealEstate = await ethers.getContractFactory('RealEstate')
@@ -26,7 +26,7 @@ async function main() {
   }
   // Deploy Escrow
   const Escrow = await ethers.getContractFactory('Escrow')
-  escrow = await Escrow.deploy(
+  const escrow = await Escrow.deploy(
     realEstate.address,
     seller.address,
     inspector.address,
@@ -36,6 +36,7 @@ async function main() {
   console.log(`Deployed Escrow Contract at: ${escrow.address}`)
 
   for (let i = 0; i < 3; i++) {
+    // Approve Property
     let transaction = await realEstate.connect(seller).approve(escrow.address, i + 1)
     await transaction.wait()
   }

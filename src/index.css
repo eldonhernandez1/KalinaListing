@@ -14,8 +14,9 @@ code {
   font-family: 'Inter', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+/* Onest is for Headlines and Logo. */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Onest:wght@100&display=swap');
+/* Inter is for body copy */
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100&display=swap');
 
 * {
