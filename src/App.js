@@ -17,7 +17,7 @@ import config from '../src/config.json';
 function App() {
   const [provider, setProvider] = useState(null)
   const [escrow, setEscrow] = useState(null)
-  const [totalSupply, setTotalSupply] = useState(null)
+  const [totalSupply, setTotalSupply] = useState(3)
 
   const [account, setAccount] = useState(null)
   const [homes, setHomes] = useState([])
@@ -35,21 +35,27 @@ function App() {
     try {
       const totalSupply = await realEstate.totalSupply();
       setTotalSupply(totalSupply)
-      
+
     } catch (error) {
       console.error("Error fetching totalSupply:", error);
     }
-    
+    console.log(totalSupply)
     const homes = []
-
-    for (var i = 1; i <= totalSupply; i++){
-      const uri = await realEstate.tokenURI(i)
-      const response = await fetch(uri)
-      const metadata = await response.json()
-      homes.push(metadata)
+    
+    for (var i = 1; i <= totalSupply; i++) {
+      try {
+        const uri = await realEstate.tokenURI(i);
+        const response = await fetch(uri);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const metadata = await response.json();
+        homes.push(metadata);
+      } catch (error) {
+        console.error("Error fetching home data:", error);
+      }
     }
-
-    setHomes(homes)
+    setHomes(homes);
 
     const escrow = new ethers.Contract(config[chainId].escrow.address, Escrow, provider)
     setEscrow(escrow)

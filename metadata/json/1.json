@@ -1,8 +1,8 @@
 {
-    "name": "Luxury NYC Penthouse",
-    "address": "157 W 57th St APT 49B, New York, NY 10019",
-    "description": "Luxury Penthouse located in the heart of NYC",
-    "image": "https://ipfs.io/ipfs/QmQUozrHLAusXDxrvsESJ3PYB3rUeUuBAvVWw6nop2uu7c/1.png",
+    "name": "Luxury Miami House",
+    "address": "14233 SW 23rd Ln, Miami, FL 33175",
+    "description": "Luxury Miami house located in within the Caribe Lakes gated community.",
+    "image": "ipfs://bafybeiho33ghrjxzzv2j4udbswb7ul4vhjlepfo23an6rz6u2opyveb4me/1.png",
     "id": "1",
     "attributes": [
         {
@@ -11,23 +11,23 @@
         },
         {
             "trait_type": "Type of Residence",
-            "value": "Condo"
+            "value": "Single Family Residence"
         },
         {
             "trait_type": "Bed Rooms",
-            "value": 2
+            "value": 4
         },
         {
             "trait_type": "Bathrooms",
-            "value": 3
+            "value": 2
         },
         {
             "trait_type": "Square Feet",
-            "value": 2200
+            "value": 5775
         },
         {
             "trait_type": "Year Built",
-            "value": 2013
+            "value": 1999
         }
     ]
 }
