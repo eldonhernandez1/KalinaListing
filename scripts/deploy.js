@@ -22,7 +22,7 @@ async function main() {
   console.log(`Minting 3 properties...\n`)
 
   for (let i = 0; i < 3; i++) {
-    const transaction = await realEstate.connect(seller).mint(`ipfs://bafybeiakj42ns3mqce6yovh454q7fulc623usa6uomvpn7mab3n546jjj4/${i + 1}.json`)
+    const transaction = await realEstate.connect(seller).mint(`https://ipfs.io/ipfs/bafybeibolidyrqu3s7xckf5uowf2b7p5a32sgyiikth5nk5ayiamc5sxdy/${i + 1}.json`)
     await transaction.wait()
   }
   // Deploy Escrow

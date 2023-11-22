@@ -18,7 +18,7 @@ describe('Escrow', () => {
         realEstate = await RealEstate.deploy()
 
         // Mint 
-        let transaction = await realEstate.connect(seller).mint("https://ipfs.io/ipfs/bafybeiakj42ns3mqce6yovh454q7fulc623usa6uomvpn7mab3n546jjj4")
+        let transaction = await realEstate.connect(seller).mint("https://ipfs.io/ipfs/bafybeibolidyrqu3s7xckf5uowf2b7p5a32sgyiikth5nk5ayiamc5sxdy/")
         await transaction.wait()
 
         // Deploy Escrow
