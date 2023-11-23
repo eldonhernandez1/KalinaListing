@@ -35,7 +35,7 @@ describe('Escrow', () => {
         await transaction.wait()
 
         // List Property
-        transaction = await escrow.connect(seller).list(1, buyer.address, tokens(10), tokens(5))
+        transaction = await escrow.connect(seller).list(1, buyer.address, tokens(.10), tokens(.5))
         await transaction.wait()
     })
 
@@ -74,12 +74,12 @@ describe('Escrow', () => {
 
         it('Returns purchase price', async () => {
             const result = await escrow.purchasePrice(1)
-            expect(result).to.be.equal(tokens(10))
+            expect(result).to.be.equal(tokens(.10))
         })
 
         it('Returns escrow amount', async () => {
             const result = await escrow.escrowAmount(1)
-            expect(result).to.be.equal(tokens(5))
+            expect(result).to.be.equal(tokens(.5))
         })
 
         it('Updates ownership', async () => {
@@ -89,13 +89,13 @@ describe('Escrow', () => {
 
     describe('Deposits', () => {
         beforeEach(async () => {
-            const transaction = await escrow.connect(buyer).depositEarnest(1, { value: tokens(5) })
+            const transaction = await escrow.connect(buyer).depositEarnest(1, { value: tokens(.5) })
             await transaction.wait()
         })
 
         it('Updates contract balance', async () => {
             const result = await escrow.getBalance()
-            expect(result).to.be.equal(tokens(5))
+            expect(result).to.be.equal(tokens(.5))
         })
     })
 
@@ -132,7 +132,7 @@ describe('Escrow', () => {
 
     describe('Sale', () => {
         beforeEach(async () => {
-            let transaction = await escrow.connect(buyer).depositEarnest(1, { value: tokens(5) })
+            let transaction = await escrow.connect(buyer).depositEarnest(1, { value: tokens(.5) })
             await transaction.wait()
 
             transaction = await escrow.connect(inspector).updateInspectionStatus(1, true)
@@ -147,7 +147,7 @@ describe('Escrow', () => {
             transaction = await escrow.connect(lender).approveSale(1)
             await transaction.wait()
 
-            await lender.sendTransaction({ to: escrow.address, value: tokens(5) })
+            await lender.sendTransaction({ to: escrow.address, value: tokens(.5) })
 
             transaction = await escrow.connect(seller).finalizeSale(1)
             await transaction.wait()
