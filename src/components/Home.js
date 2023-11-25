@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import close from '../assets/close.svg';
 
-const Home = ({ home, provider, account, escrow, toggleProp }) => {
+const Home = ({ home, provider, account, escrow, toggleProp, setIsHomeVisible }) => {
     const [hasBought, setHasBought] = useState(false)
     const [hasLended, setHasLended] = useState(false)
     const [hasInspected, setHasInspected] = useState(false)
@@ -44,8 +44,8 @@ const Home = ({ home, provider, account, escrow, toggleProp }) => {
 
         const hasInspected = await escrow.inspectionPassed(home.id)
         setHasInspected(hasInspected)
-    }
 
+    }
     const fetchOwner = async () => {
         if (await escrow.isListed(home.id)) return
 
@@ -179,8 +179,8 @@ const Home = ({ home, provider, account, escrow, toggleProp }) => {
 
 
                 <button onClick={toggleProp} className="home__close">
-                    <img src={close} alt="Close" />
-                </button>
+        <img src={close} alt="Close" />
+      </button>
             </div>
         </div >
     );

@@ -6,7 +6,6 @@ import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Search from './components/Search';
 
-
 // ABIs
 import Escrow from '../src/abis/Escrow.json'
 import RealEstate from '../src/abis/RealEstate.json'
@@ -23,7 +22,7 @@ function App() {
   const [homes, setHomes] = useState([])
   const [home, setHome] = useState([])
   const [toggle, setToggle] = useState(false)
-  
+
   // Load Blockchain Data
   const loadBlockchainData = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -95,7 +94,7 @@ function App() {
                 <img src={home.image} alt="Home" />
               </div>
               <div className='card__info'>
-                <h4>{home.attributes[0].value} ETH</h4>
+                <h4>.{home.attributes[0].value} ETH</h4>
                 <p>
                   <strong>{home.attributes[1].value}</strong> bds |
                   <strong>{home.attributes[2].value}</strong> ba |
@@ -107,14 +106,15 @@ function App() {
           ))}
         </div>
       </div>
-          {toggle && (
-            <Home
-            home={home}
-            provider={provider}
-            account={account}
-            escrow={escrow}
-            toggle={toggleProp} />
-          )}
+      {toggle && ( // Conditionally render Home based on isHomeVisible state
+        <Home
+          home={home}
+          provider={provider}
+          account={account}
+          escrow={escrow}
+          toggleProp={toggleProp}
+        />
+      )}
     </div>
   );
 }
