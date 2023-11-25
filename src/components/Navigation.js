@@ -42,7 +42,7 @@ const Navigation = ({ account, setAccount }) => {
                 </button>
             )}
 	</Navbar>			
-	)
+	);
 }
 
 export default Navigation;

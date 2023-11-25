@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import close from '../assets/close.svg';
 
-const Home = ({ home, provider, account, escrow, togglePop }) => {
+const Home = ({ home, provider, account, escrow, toggleProp }) => {
     const [hasBought, setHasBought] = useState(false)
     const [hasLended, setHasLended] = useState(false)
     const [hasInspected, setHasInspected] = useState(false)
@@ -99,7 +99,7 @@ const Home = ({ home, provider, account, escrow, togglePop }) => {
         let transaction = await escrow.connect(signer).approveSale(home.id)
         await transaction.wait()
 
-        // Seller finalize the sale
+        // Seller finalizes the sale
         transaction = await escrow.connect(signer).finalizeSale(home.id)
         await transaction.wait()
 
@@ -113,16 +113,16 @@ const Home = ({ home, provider, account, escrow, togglePop }) => {
 
     return (
         <div className="home">
-            <div className='home__details'>
+            <div className="home__details">
                 <div className="home__image">
                     <img src={home.image} alt="Home" />
                 </div>
                 <div className="home__overview">
                     <h1>{home.name}</h1>
                     <p>
-                        <strong>{home.attributes[2].value}</strong> bds |
-                        <strong>{home.attributes[3].value}</strong> ba |
-                        <strong>{home.attributes[4].value}</strong> sqft
+                        <strong>{home.attributes[1].value}</strong> bds |
+                        <strong>{home.attributes[2].value}</strong> ba |
+                        <strong>{home.attributes[3].value}</strong> sqft
                     </p>
                     <p>{home.address}</p>
 
@@ -178,7 +178,7 @@ const Home = ({ home, provider, account, escrow, togglePop }) => {
                 </div>
 
 
-                <button onClick={togglePop} className="home__close">
+                <button onClick={toggleProp} className="home__close">
                     <img src={close} alt="Close" />
                 </button>
             </div>
