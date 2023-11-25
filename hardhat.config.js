@@ -1,6 +1,6 @@
-require("dotenv").config();
-const privateKeys = process.env.PRIVATE_KEYS || ""
-const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY || ""
+// require("dotenv").config();
+// const privateKeys = process.env.PRIVATE_KEYS || ""
+// const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY || ""
 require("@nomicfoundation/hardhat-toolbox");
 /** @type import('hardhat/config').HardhatUserConfig **/
 
