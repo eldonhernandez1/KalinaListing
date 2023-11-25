@@ -24,7 +24,7 @@ async function main() {
   for (let i = 0; i < 3; i++) {
     const transaction = await realEstate.connect(seller).mint(`https://ipfs.io/ipfs/bafybeibolidyrqu3s7xckf5uowf2b7p5a32sgyiikth5nk5ayiamc5sxdy/${i + 1}.json`)
     await transaction.wait()
-    { gasLimit: 300000 } // Set an appropriate gas limit
+    { gasLimit: 60000 } // Set an appropriate gas limit from the home.js file
   }
   // Deploy Escrow
   const Escrow = await ethers.getContractFactory('Escrow')

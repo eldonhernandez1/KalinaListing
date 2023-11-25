@@ -179,8 +179,8 @@ const Home = ({ home, provider, account, escrow, toggleProp }) => {
 
 
                 <button onClick={toggleProp} className="home__close">
-        <img src={close} alt="Close" />
-      </button>
+                    <img src={close} alt="Close" />
+                </button>
             </div>
         </div >
     );
