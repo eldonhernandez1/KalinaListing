@@ -24,9 +24,11 @@ function App() {
   const [home, setHome] = useState([])
   const [toggle, setToggle] = useState(false)
   
+  // Load Blockchain Data
   const loadBlockchainData = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     setProvider(provider)
+    console.log(provider)
 
     const {chainId} = await provider.getNetwork()
 
@@ -81,7 +83,7 @@ function App() {
       <Navigation account={account} setAccount={setAccount} />
       <Search />
       <div className='cards__section'>
-      <h2 className="m-4 text-center">This is Kalina Listing, an exciting way to mint Real Estate NFTs on the blockchain.</h2>
+      <h2 className="m-4 text-center">This is Kalina Listing, an exciting way to mint Real Estate NFTs on the blockchain. Easily mint your NFT for homeownership.</h2>
       <h3>Homes For Sale</h3>
 
       <hr />
@@ -89,15 +91,15 @@ function App() {
       <div className="cards">
         {homes.map((home, index) => (
           <div className="card" key={index} onClick={() => togglePop(home)}>
-            <div className='card__image'>
+            <div className="card__image">
               <img src={home.image} alt="home" />
             </div>
             <div className="card__info">
               <h4>{home.attributes[0].value} ETH</h4>
-              <p>
-                <strong>{home.attributes[1].value}</strong> bds |
-                <strong>{home.attributes[2].value}</strong> ba |
-                <strong>{home.attributes[3].value}</strong> sqft
+              <p className="">
+                <strong>{home.attributes[2].value}</strong> bds |
+                <strong>{home.attributes[3].value}</strong> ba |
+                <strong>{home.attributes[4].value}</strong> sqft
               </p>
               <p>{home.address}</p>
             </div>
@@ -106,7 +108,7 @@ function App() {
         </div>
       </div>
           {toggle && (
-            <home
+            <Home
             home={home}
             provider={provider}
             account={account}
