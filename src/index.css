@@ -168,8 +168,8 @@ header {
 .card {
   width: 350px;
   height: 275px;
-
-  border: 1px solid #000000;
+  border: none !important;
+  /* border: 1px solid #000000; */
   margin: 10px auto;
 
   cursor: pointer;
@@ -190,6 +190,7 @@ header {
 
 .card__image img {
   max-width: 100%;
+  border-radius: 15px;
 }
 
 .card__info {

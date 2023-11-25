@@ -105,6 +105,7 @@ function App() {
             </div>
           ))}
         </div>
+        
       </div>
       {toggle && ( // Conditionally render Home based on isHomeVisible state
         <Home
