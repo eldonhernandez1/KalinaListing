@@ -202,7 +202,7 @@ header {
   padding: 5px 10px;
 
   position: absolute;
-  bottom: 0;
+  bottom: -270px;
   left: 0;
 }
 
@@ -210,13 +210,18 @@ header {
   font-family: 'Onest', sans-serif;
   font-size: 1.25em;
   font-weight: 600;
-  margin-top: 15px;
+  background-color: #FFFFFF;
+  padding: 5px;
+  margin-bottom: 0 !important;
+  margin-top: 15px !important;
 }
 
 .card__info p {
   font-family: "Inter"; /* Leave this for now. You can change it later */
   font-size: 0.90em;
-  margin-top: 5px;
+  padding: 5px;
+  margin-bottom: 0px !important;
+  background-color: #FFFFFF;
 }
 
 /* ------------------------------------------------------ */

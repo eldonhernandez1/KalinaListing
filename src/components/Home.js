@@ -120,8 +120,8 @@ const Home = ({ home, provider, account, escrow, toggleProp }) => {
                 <div className="home__overview">
                     <h1>{home.name}</h1>
                     <p>
-                        <strong>{home.attributes[1].value}</strong> bds |
-                        <strong>{home.attributes[2].value}</strong> ba |
+                        <strong>{home.attributes[1].value}</strong> bds | 
+                        <strong>{home.attributes[2].value}</strong> ba | 
                         <strong>{home.attributes[3].value}</strong> sqft
                     </p>
                     <p>{home.address}</p>
